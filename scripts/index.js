@@ -1,28 +1,29 @@
-let mensajePrueba = 'Hola';
-let mensajeEncriptadoPrueba = 'Hoberlai';
-
-const vocales = {
+const vocalesEncrypt  = {
     a: 'ai',
     e: 'enter',
     i: 'imes',
     o: 'ober',
-    u: 'ufat'
+    u: 'ufat',
 }
 
 const getEncript = ( vocal ) => {
-    return vocales[vocal]
+    return vocalesEncrypt[vocal]
 }
 
-const mensajeEncriptado = () => {
-    let mensaje = '';
-    for( const letra of mensajePrueba ) {
-      mensaje += vocales[letra] ? getEncript(letra) : letra        
+const encrypt = ( mensaje ) => {
+    let resultado = '';
+    for( const letra of mensaje ) {
+      resultado += vocalesEncrypt[letra] ? getEncript(letra) : letra        
     }
-    
+    return resultado;
+}
+
+const decrypt = ( mensaje ) => {
+    for( let key in vocalesEncrypt ) {
+        mensaje = mensaje.replace( vocalesEncrypt[key], key );
+    }
     return mensaje;
 }
-
-
 
 
 
