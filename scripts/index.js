@@ -1,30 +1,33 @@
-const vocalesEncrypt  = {
-    a: 'ai',
-    e: 'enter',
-    i: 'imes',
-    o: 'ober',
-    u: 'ufat',
+import { encrypt, decrypt } from './encrypt.js';
+
+const btnEncrypt = document.getElementById('encrypt')
+const btnDecrypt = document.getElementById('decrypt');
+
+const textArea = document.getElementById('mensaje');
+const respuesta = document.getElementById('respuesta');
+
+btnEncrypt.onclick = () => {
+    tipoAccion(true);
+
 }
 
-const getEncript = ( vocal ) => {
-    return vocalesEncrypt[vocal]
+btnDecrypt.onclick = () => {
+    tipoAccion(false);
 }
 
-const encrypt = ( mensaje ) => {
-    let resultado = '';
-    for( const letra of mensaje ) {
-      resultado += vocalesEncrypt[letra] ? getEncript(letra) : letra        
+//Encriptar true, Desencriptar false
+const tipoAccion = ( tipo ) => {
+    let mensaje = textArea.value.toLowerCase();
+
+    if( !mensaje ) {
+        return console.log('No hay nada');
     }
-    return resultado;
+
+    mensaje = tipo 
+                   ? encrypt( mensaje ) 
+                   : decrypt( mensaje ); 
+
+    respuesta.innerHTML = mensaje;
+    
 }
-
-const decrypt = ( mensaje ) => {
-    for( let key in vocalesEncrypt ) {
-        mensaje = mensaje.replace( vocalesEncrypt[key], key );
-    }
-    return mensaje;
-}
-
-
-
 
