@@ -5,9 +5,49 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="styles/styles2.css">
         <title>Encriptador</title>
     </head>
     <body>
-        <h1>Encriptador</h1>
+        
+        <header>
+            <img id="logo" src="static/imgs/img_temporal.png" alt="">
+        </header>  
+
+        <div class="row">
+                <div class="col">
+                        <textarea id="mensaje"
+                                class="mensaje"
+                                placeholder="Ingresa el texto"></textarea>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="row buttons">
+                                    <button id="encrypt" 
+                                            class="btn encriptar">
+                                                Encriptar
+                                    </button>
+                                    <button id="decrypt"
+                                            class="btn desencriptar">
+                                                Desencriptar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col">
+                    <div class="resultado">
+                        <h3>Ningún mensaje se ha encontrado.</h3>
+                        <p id="respuesta">Ingresa el texto que deseas encriptar o desencriptar.</p>
+                        
+                    </div>
+                    <div class="col copy">
+                        <button class="btn desencriptar">Copiar</button>  
+                    </div>
+                </div>
+        </div>
+        <script type="module" src="scripts/index.js"></script>
     </body>
 </html>
