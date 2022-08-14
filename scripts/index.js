@@ -8,7 +8,7 @@ const btnDecrypt = document.getElementById('decrypt');
 const textArea = document.getElementById('mensaje');
 const respuesta = document.getElementById('respuesta');
 
-const specialCharactersPattern = /[ áéíóúü`!@#$%^&*()_+\-=\[\]{}';:"\\|,.<>\/?~]/;
+const specialCharactersPattern = /[áéíóúü`!@#$%^&*()_+\-=\[\]{}';:"\\|,.<>\/?~]/;
 
 
 //Metodos para encrypt/decrypt
